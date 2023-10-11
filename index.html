@@ -7,9 +7,9 @@
 <body>
 
         <div Class="div_header" id="div_header">
-        <img src="img/IFLIX.png" height="50px">
+        <a href="index.html"><img src="img/IFLIX.png" height="50px"></a>
             <ul>
-             <li> <a href="#">Início </a></li>
+             <li> <a href="index.html">Início </a></li>
              <li><a href="#">Séries</a></li>
              <li><a href="#">Filmes</a></li>
              <li><a href="#">Gêneros</a></li>
@@ -17,27 +17,63 @@
             </ul>    
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="Pesquisar">
-                <button>Buscar</button>
+                <button id="search-button">Buscar</button>
             </div>     
         </div>
-        <main>
+        <main id="main-index" class="main-index">
         <div id="content">
             <h2>Filmes em Destaque</h2>
-                 <div class="movie">
+            <div class="movie" data-filme="filme1">
                 <img src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="Filme 1">
-                <h3>A Freira</h3>
-               
+                <h3>A Freira</h3><!-- No arquivo "index.html" -->
+                <div id="detalhes-filme"></div>
+                
             </div>
-            <div class="movie">
-                <img src="https://s2-marieclaire.glbimg.com/T_DX6ffqPGvmu5rvV2neO9uK1mM=/0x0:1382x2048/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/u/n/y0xBC1SIy2idfpVSornQ/barbie-posteres.jpg" alt="Filme 2">
+            <div class="movie" data-filme="filme2">
+              <img src="https://s2-marieclaire.glbimg.com/T_DX6ffqPGvmu5rvV2neO9uK1mM=/0x0:1382x2048/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/u/n/y0xBC1SIy2idfpVSornQ/barbie-posteres.jpg" alt="Filme 2">
                 <h3>Barbie</h3>
-           
             </div>
+            
             <div class="movie">
                 <img src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="Filme 3">
                 <h3>Five Nigths at Freddy's</h3>
              
-            </div>
+            </div>    
+        <div class="movie">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTY3MjU0NDA0OF5BMl5BanBnXkFtZTgwNTc0MTU3OTE@._V1_.jpg" alt="Filme 4">
+            <h3>Angry Birds</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://img.elo7.com.br/product/original/26A8589/big-poster-serie-breaking-bad-lo03-tamanho-90x60-cm-poster-de-serie.jpg" alt="Filme 5">
+            <h3>Breaking bad</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9E5C3B1D4B166BCAC5A95D1908D0214C7094BE77F8A8EDB5F74DEBC63D6F2A21/scale?width=506&aspectRatio=2.00&format=jpeg" alt="Filme 6">
+            <h3>Pocahontas</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg" alt="Filme 7">
+            <h3>Click</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://filmestipo.com/img_pt/movie/thumb/f4/12348.jpg" alt="Filme 8">
+            <h3>Uma noite no museu</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://assets-prd.ignimgs.com/2022/07/21/oppenheimer-poster-1658411601593.jpeg" alt="Filme 9">
+            <h3>Oppenheimer</h3>
+         
+        </div>
+        <div class="movie">
+            <img src="https://br.web.img3.acsta.net/pictures/16/11/21/15/29/457312.jpg" alt="Filme 9">
+            <h3>Até o ultimo homem</h3>
+         
+        </div>
         </div>
         </main>
     

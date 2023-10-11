@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Nome do Filme</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <div class="div_header">
+        <a href="index.html"><img src="img/IFLIX.png" height="50px"></a>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Séries</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Gêneros</a></li>
+            <li><a href="#">Favoritos</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar">
+            <button id="search-button">Buscar</button>
+        </div>
+    </div>
+
+    <main>
+        <div id="content">
+            <div class="filme-info">
+                <h1>Nome do Filme </h1>
+                <p>Ano: Ano do Filme</p>
+                <p>Sinopse: Descrição do Filme</p>
+            </div>
+
+            <!-- Adicione o vídeo do YouTube aqui -->
+        </div>
+    </main>
+
+    <footer class="rodape-estilizado">
+        <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
+        <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale">Fale Conosco</a></li>
+    </footer>
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filmeSelecionado = urlParams.get("filme");
+
+    const movieData = {
+        filme1: {
+            nome: "A freira",
+            ano: "2018",
+            descricao: "Fazendo parte da franquia Invocação do Mal, em A Freira, após uma irmã cometer suicídio em um convento na Romênia, o Vaticano envia um padre atormentado e uma noviça para investigar o ocorrido. Arriscando suas vidas, a fé e até suas almas, os dois descobrem um segredo profano no local, confrontando-se com uma força do mal que toma a forma de uma freira demoníaca e transforma o convento num campo de batalha espiritual.",
+            imagem: "https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg"
+        },
+        filme2: {
+            nome: "Nome do Filme 2",
+            ano: "Ano do Filme 2",
+            descricao: "Descrição do Filme 2",
+            imagem: "URL_DA_IMAGEM_DO_FILME_2"
+        },
+        // Adicione mais filmes conforme necessário
+    };
+
+    if (movieData.hasOwnProperty(filmeSelecionado)) {
+        const movie = movieData[filmeSelecionado];
+        document.title = `Filme - ${movie.nome}`;
+        document.querySelector("h1").textContent = movie.nome;
+        document.querySelector("p:nth-of-type(1)").textContent = `Ano: ${movie.ano}`;
+        document.querySelector("p:nth-of-type(2)").textContent = `Descrição: ${movie.descricao}`;
+
+        // Crie um elemento de imagem
+        const filmeImagem = document.createElement("img");
+        filmeImagem.src = movie.imagem;
+        filmeImagem.alt = movie.nome;
+
+        // Adicione a imagem ao documento
+        const contentDiv = document.getElementById("content");
+        contentDiv.appendChild(filmeImagem);
+    } else {
+        document.body.innerHTML = "<p>Filme não encontrado.</p>";
+    }
+});
+
+    </script>
+</body>
+</html>
