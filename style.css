@@ -1,0 +1,161 @@
+.div_titulo{
+    background-color:rgb(121, 68, 121);
+    margin-right: 0%;
+    display: flex;
+    padding: 0%;
+
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+ .div_header ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    margin-left: 0;
+    
+}
+
+.div_header ul li {
+    margin-right: 20px;
+    transition: transform 0.2s;
+}
+
+.div_header ul li:last-child {
+    margin-right: 0;
+}
+
+.div_header li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.div_header li a:hover {
+    color: rgb(172, 101, 172);
+}
+
+.div_header {
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+h1{
+    display: flex;
+    padding: 0;
+}
+
+.div_header .logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+.div_header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.div_header .search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    background: #333;
+    color: #fff;
+    transition: background 0.2s;
+}
+
+.div_header .search-bar button {
+    background: rgb(121, 68, 121);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+transition: background 0.2s, transform 0.2s; 
+}
+.div_header .search-bar button:hover {
+    background: #ff5a5f; /* Cor diferente ao passar o mouse */
+}
+
+/* Adicionamos uma classe para a animação */
+.div_header .search-animation {
+    transform: scale(1.1); /* Efeito de escala para o botão */
+}
+.rodape-estilizado {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+.Fale_conosco{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    list-style: none;
+}
+.fale{
+    text-decoration: none;
+    color: #fff;
+
+}
+#content {
+    padding: 20px;
+    text-align: center;
+}
+
+.movie {
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+    border-radius: 10px; /* Definindo bordas arredondadas */
+    overflow: hidden; /* Ocultando qualquer conteúdo que se estenda além das bordas arredondadas */
+    position: relative; /* Para posicionar o ícone de "play" */
+    transition: transform 0.2s; /* Adicionando animação de transformação */
+}
+
+.movie img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px; /* Arredonda as extremidades da imagem */
+}
+
+.movie::after {
+    content: "\25B6"; /* Adiciona o ícone de "play" (triângulo direito) */
+    font-size: 4em; /* Torna o ícone maior */
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Torna o ícone mais transparente */
+    transition: opacity 0.2s;
+}
+
+.movie:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+.movie:hover::after {
+    opacity: 1;
+}
+main {
+    /* Estilos para o conteúdo principal */
+    flex: 1;
+}
