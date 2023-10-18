@@ -1,0 +1,134 @@
+<!-- generos.html -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Gêneros de Filmes</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+</head>
+<body>
+    <div class="div_header">
+        <a href="index.html"><img src="img/IFLIX.png" height="50px"></a>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="#">Séries</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="generos.html">Gêneros</a></li>
+            <li><a href="#">Favoritos</a></li>
+        </ul>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pesquisar">
+            <button id="search-button">Buscar</button>
+        </div>
+    </div>
+
+    <h1 class="titulo-genero">Escolha um Gênero:</h1>
+    <!-- Botões de gênero -->
+    <main>
+    <div class="generos-list">
+        <button id="acao">Ação</button>
+        <button id="comedia">Comédia</button>
+        <button id="terror">Terror</button>
+        <button id="ficcao">Ficção Científica</button>
+        <button id="drama">Drama</button>
+        <!-- Adicione mais botões para outros gêneros -->
+    </div>
+    
+    <!-- Área onde os filmes serão exibidos -->
+    <div class="genero-filmes" id="filmes-container">
+        <div class="movie terror" data-filme="filme1" data-generos="terror">
+            <img src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="Filme 1">
+            <h3>A Freira</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme2" data-generos="drama comedia">
+            <img src="https://s2-marieclaire.glbimg.com/T_DX6ffqPGvmu5rvV2neO9uK1mM=/0x0:1382x2048/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/u/n/y0xBC1SIy2idfpVSornQ/barbie-posteres.jpg" alt="Filme 2">
+            <h3>Barbie</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme3" data-generos="terror">
+            <img src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="Filme 3">
+            <h3>Five Nights at Freddy's</h3>
+        </div>
+        
+        <div class="movie " data-filme="filme4" data-generos="acao comedia">
+            <img src="https://m.media-amazon.com/images/M/MV5BMTY3MjU0NDA0OF5BMl5BanBnXkFtZTgwNTc0MTU3OTE@._V1_.jpg" alt="Filme 4">
+            <h3>Angry Birds</h3>
+        </div>
+        
+        <div class="movie " data-filme="filme5" data-generos="acao drama ficcao">
+            <img src="https://img.elo7.com.br/product/original/26A8589/big-poster-serie-breaking-bad-lo03-tamanho-90x60-cm-poster-de-serie.jpg" alt="Filme 5">
+            <h3>Breaking Bad</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme6" data-generos="acao">
+            <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/9E5C3B1D4B166BCAC5A95D1908D0214C7094BE77F8A8EDB5F74DEBC63D6F2A21/scale?width=506&aspectRatio=2.00&format=jpeg" alt="Filme 6">
+            <h3>Pocahontas</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme7" data-generos="drama">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg" alt="Filme 7">
+            <h3>Click</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme8" data-generos="comedia">
+            <img src="https://filmestipo.com/img_pt/movie/thumb/f4/12348.jpg" alt="Filme 8">
+            <h3>Uma Noite no Museu</h3>
+        </div>
+        
+        <div class="movie" data-filme="filme9" data-generos="drama">
+            <img src="https://assets-prd.ignimgs.com/2022/07/21/oppenheimer-poster-1658411601593.jpeg" alt="Filme 9">
+            <h3>Oppenheimer</h3>
+        </div>
+    </div>
+</main>
+    <footer class="rodape-estilizado">
+        <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
+        <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale"> Fale Conosco</a></li>
+        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const filmesContainer = document.getElementById("filmes-container");
+    const botoesGenero = document.querySelectorAll(".generos-list button");
+
+    // Ocultar todos os filmes inicialmente
+    filmesContainer.style.display = "none";
+
+    // Adicionar manipuladores de evento aos botões de gênero
+    botoesGenero.forEach((botao) => {
+        botao.addEventListener("mouseenter", () => {
+            botao.style.backgroundColor = "red"; // Altera a cor de fundo ao passar o mouse
+        });
+
+        botao.addEventListener("mouseleave", () => {
+            botao.style.backgroundColor = "transparent"; // Restaura a cor de fundo ao remover o mouse
+        });
+
+        botao.addEventListener("click", () => {
+            const generoSelecionado = botao.id;
+            mostrarFilmesPorGenero(generoSelecionado);
+        });
+    });
+});
+
+function mostrarFilmesPorGenero(genero) {
+    const filmesContainer = document.getElementById("filmes-container");
+    const filmes = filmesContainer.querySelectorAll(".movie");
+
+    filmesContainer.style.display = "flex"; // Tornar o contêiner de filmes visível
+
+    filmes.forEach((filme) => {
+        const generosDoFilme = filme.getAttribute("data-generos");
+        if (generosDoFilme && generosDoFilme.split(" ").includes(genero)) {
+            filme.style.display = "block"; // Exibir o filme do gênero selecionado
+        } else {
+            filme.style.display = "none"; // Ocultar os outros filmes
+        }
+    });
+}
+
+    </script>
+    <script src="Script.js"></script>
+</body>
+</html>

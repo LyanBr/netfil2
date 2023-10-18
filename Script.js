@@ -60,3 +60,45 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const movieContainers = document.querySelectorAll(".movie");
+    const destaqueTitle = document.getElementById("destaque-title");
+
+    function filterMovies(category) {
+        movieContainers.forEach(container => {
+            const tag = container.getAttribute("data-tag");
+    
+            if (category === "inicio" || category === tag) {
+                container.style.display = "inline-block"; // Altera para "inline-block"
+            } else {
+                container.style.display = "none";
+            }
+        });
+    
+        if (category === "serie") {
+            destaqueTitle.textContent = "Séries em Destaque";
+        } else if (category === "filme") {
+            destaqueTitle.textContent = "Filmes em Destaque";
+        } else {
+            destaqueTitle.textContent = "Filmes/Séries em Destaque";
+        }
+    }
+    
+
+    document.getElementById("filtro-inicio").addEventListener("click", () => {
+        filterMovies("inicio");
+    });
+
+    document.getElementById("filtro-series").addEventListener("click", () => {
+        filterMovies("serie");
+    });
+
+    document.getElementById("filtro-filmes").addEventListener("click", () => {
+        filterMovies("filme");
+    });
+});
+document.getElementById('calc-button').addEventListener('click', function() {
+    // Redirecionar o usuário para outra página
+    window.location.href = 'calculadora.html';
+});
+

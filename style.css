@@ -247,6 +247,13 @@ transition: background 0.2s, transform 0.2s;
 .movie:hover {
     cursor: pointer;
 }
+.content{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
 .filme-info {
     background: #111;
     color: #fff;
@@ -254,24 +261,57 @@ transition: background 0.2s, transform 0.2s;
     border-radius: 10px;
     text-align: center;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+    display:center;
 }
 
 .filme-info h1 {
-    text-align: center;
-    margin-left: 34%;
     font-size: 24px;
-    margin-bottom: 10px;
+    justify-content: center;
+    
 }
 
-.filme-info p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
+
 .filme-imagem {
-    width: 120px; /* Define a largura da imagem */
-    height: auto; /* A altura se ajustará automaticamente à largura */
-    position: absolute; /* Define a posição absoluta */
-    top: 20px; /* Distância do topo */
-    left: 20px; /* Distância da esquerda */
+    max-width: 300px; /* Define a largura da imagem */
+    height: 400px; /* A altura se ajustará automaticamente à largura */
+    width: 100%;
+   border-radius: 12px;
+   margin: 10px;
+}
+
+
+/* style.css */
+
+/* Estilize os botões de gênero semelhantes à Netflix */
+.generos-list {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.generos-list button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out; /* Adicione esta linha */
+}
+.generos-list button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilize a área de filmes */
+.genero-filmes {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+.titulo-genero{
+    justify-content: center;
 }
