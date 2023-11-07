@@ -1,34 +1,31 @@
-/* HEADER */
-.div_titulo{
-    background-color:rgb(121, 68, 121);
+.div_titulo {
+    background-color: rgb(121, 68, 121);
     margin-right: 0%;
     display: flex;
     padding: 0%;
-
-
 }
+
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     color: #fff;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
- .div_header ul {
+.div_header ul {
     list-style: none;
     display: flex;
-    padding: 0;
-    margin: 0;
-    margin-left: 0;
-    
+    padding: 0 auto;
+    margin: 0 auto;
+    margin-left: 0 auto;
 }
 
 .div_header ul li {
-    margin-right: 20px;
+    margin-right: 2.5%;
     transition: transform 0.2s;
 }
 
@@ -40,7 +37,8 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15%;
+    margin-bottom: 10%;
 }
 
 .div_header li a:hover {
@@ -53,29 +51,33 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 5% 10%;
+    box-shadow: 0px 0.05% 0.025% rgba(0, 0, 0, 0.5);
 }
-h1{
+
+h1 {
     display: flex;
     padding: 0;
 }
 
 .div_header .logo {
-    font-size: 36px;
-    font-weight: bold;
+    height: 05%;
+    width: 45%;
 }
+
 .div_header .search-bar {
     display: flex;
     align-items: center;
+    height: 25%;
+    width: 200%;
 }
 
 .div_header .search-bar input {
-    padding: 10px;
+    padding: 10%;
     border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-    font-size: 16px;
+    border-radius: 25%;
+    margin-right: 10%;
+    font-size: 50%;
     background: #333;
     color: #fff;
     transition: background 0.2s;
@@ -85,233 +87,270 @@ h1{
     background: rgb(121, 68, 121);
     border: none;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 10% 25%;
+    border-radius: 25%;
     cursor: pointer;
     font-weight: bold;
-transition: background 0.2s, transform 0.2s; 
-}
-.div_header .search-bar button:hover {
-    background: #ff5a5f; /* Cor diferente ao passar o mouse */
+    transition: background 0.2s, transform 0.2s;
+    height: 12.5%;
+    width: 60%;
+    font-size: 50%;
+    align-items: center;
 }
 
-/* Adicionamos uma classe para a animação */
-.div_header .search-animation {
-    transform: scale(1.1); /* Efeito de escala para o botão */
+.div_header .search-bar button:hover {
+    background: #ff5a5f;
 }
-/* FIM HEADER */
+
+.div_header .search-animation {
+    transform: scale(1.1);
+}
+
 .rodape-estilizado {
     background-color: #111;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 0.5%;
+    font-size: 1.5%;
 }
-.Fale_conosco{
+
+.Fale_conosco {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1.2%;
     list-style: none;
 }
-.fale{
+
+.fale {
     text-decoration: none;
     color: #fff;
-
 }
+
 #content {
-    padding: 20px;
+    padding: 10%;
     text-align: center;
 }
 
 .movie {
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 4%;
     vertical-align: top;
-    border-radius: 10px; /* Definindo bordas arredondadas */
-    overflow: hidden; /* Ocultando qualquer conteúdo que se estenda além das bordas arredondadas */
-    position: relative; /* Para posicionar o ícone de "play" */
-    transition: transform 0.2s; /* Adicionando animação de transformação */
-    height: 20%;
+    border-radius: 0.5%;
+    position: relative;
+    transition: transform 0.2s;
+    height: 100%;
     width: 15%;
+    margin-bottom: 5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1%;
+    font-size: 100%;
 }
 
 .movie img {
-    width: 100%;
-    height: 280px;
-    max-width: 200px;
-    border-radius: 10px; /* Arredonda as extremidades da imagem */
+    width: 110%;
+    height: auto;
+    border-radius: 07%;
 }
 
 .movie::after {
-    content: "\25B6"; /* Adiciona o ícone de "play" (triângulo direito) */
-    font-size: 4em; /* Torna o ícone maior */
-    position: absolute;
-    top: 42%;
+    content: "\25B6";
+    font-size: 200%;
+    position: absolute;   
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0; /* Torna o ícone mais transparente */
+    transform: translate(-35%, -130%);
+    opacity: 0;
     transition: opacity 0.2s;
 }
 
 .movie:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .movie:hover::after {
     opacity: 1;
 }
+
 main {
-    /* Estilos para o conteúdo principal */
     flex: 1;
 }
-.main-chat{
-    margin-top: 3%;
+
+.main-chat {
+    margin-top: 0.75%;
 }
-.contact-form{
-    width: 430px; margin: 60px auto; padding: 60px 30px;
-    background: rgb(91, 73, 91); border: 1px solid #e1e1e1;
-    border-radius: 10px;
-   
+
+.contact-form {
+    width: 25%;
+    margin: 3% auto;
+    padding: 3% 1.5%;
+    background: rgb(91, 73, 91);
+    border: 0.05% solid #e1e1e1;
+    border-radius: 2.5%;
 }
-.em-contato{
-    
-        font-size: 35px;
-        color: #944ab1;
-        text-transform: uppercase;
-        text-align: center;
-        margin: 0 0 35px 0;
-        text-shadow: 0px 1px 0px #fffdfd;
-    
+
+.em-contato {
+    font-size: 3%;
+    color: #944ab1;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 1.67%;
+    text-shadow: 0px 0.033% 0px #fffdfd;
 }
+
 .contact-form label {
     float: left;
-    clear: left; 
-    margin: 11px 20px 0 0;
-    width: 95px;
-    text-align: right; 
-    font-size: 16px; 
+    clear: left;
+    margin: 0.83% 1.67% 0 0;
+    width: 3.33%;
+    text-align: right;
+    font-size: 2%;
     color: #000000;
     text-transform: uppercase;
-    text-shadow: 0px 1px 0px #7c7c7c;
+    text-shadow: 0px 0.033% 0px #7c7c7c;
 }
+
 .contact-form input {
-    width: 260px;
-    height: 35px;
-    padding: 5px 20px 0px 20px; 
-    margin: 0 0 20px 0;
+    width: 10%;
+    height: 0.6%;
+    padding: 0.167% 1% 0 1%;
+    margin: 0 0 1.67%;
     background: #2d0b2c;
-    border-radius: 5px;
+    border-radius: 2.5%;
     font-family: sans-serif;
-    font-size: 16px; 
-    color: #f2f2f2; 
-    text-transform: uppercase; 
-    text-shadow: 0px -1px 0px #334f71;
+    font-size: 2%;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    text-shadow: 0px -0.033% 0px #334f71;
 }
+
 .contact-form textarea {
-    width: 260px; 
-    height: 170px; 
-    padding: 12px 20px 0px 20px; 
-    margin: 0 0 20px 0;
+    width: 10%;
+    height: 4%;
+    padding: 0.4% 1% 0 1%;
+    margin: 0 0 1.67%;
     background: #2d0b2c;
-    border-radius: 5px;
-    font-family: sans-serif; 
-    font-size: 16px; color: #f2f2f2; 
-    text-transform: uppercase; 
-    text-shadow: 0px -1px 0px #334f71;
+    border-radius: 2.5%;
+    font-family: sans-serif;
+    font-size: 2%;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    text-shadow: 0px -0.033% 0px #334f71;
     resize: none;
-}  
-.contact-form input:focus, textarea:focus {
+}
+
+.contact-form input:focus,
+textarea:focus {
     background: #402258;
 }
 
 .contact-form input[type=submit] {
-    width: 185px; 
-    height: 52px; 
-    float: right; 
-    padding: 10px 15px; 
-    margin: 0 15px 0 0;
-    border: 1px solid #556f8c;
+    width: 4.63%;
+    height: 1.2%;
+    float: right;
+    padding: 0.33% 0.5%;
+    margin: 0 1.5% 0 0;
+    border: 0.05% solid #556f8c;
     cursor: pointer;
 }
-.contact-form button{
+
+.contact-form button {
     background: #402258;
     border: none;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 0.33% 0.5%;
+    border-radius: 2.5%;
     cursor: pointer;
     font-weight: bold;
-transition: background 0.2s, transform 0.2s; 
+    transition: background 0.2s, transform 0.2s;
 }
 
 .movie:hover {
     cursor: pointer;
 }
-.content{
+
+.content {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100vh;
 }
 
-.filme-info {
-    background: #111;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    max-width: 600px;
-    margin: 0px;
-    justify-content: center;
-    align-items: center;
-    display:center;
-}
-
-.filme-info h1 {
-    font-size: 24px;
-    justify-content: center;
-    
-}
-
-
-.filme-imagem {
-    max-width: 300px; /* Define a largura da imagem */
-    height: 400px; /* A altura se ajustará automaticamente à largura */
-    width: 100%;
-   border-radius: 12px;
-   margin: 10px;
-}
-
-
-/* style.css */
-
-/* Estilize os botões de gênero semelhantes à Netflix */
 .generos-list {
     text-align: center;
-    margin: 20px 0;
+    margin: 1% 0;
 }
 
 .generos-list button {
     background-color: transparent;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
+    padding: 0.5% 1%;
+    margin: 0.5%;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease-in-out; /* Adicione esta linha */
+    font-size: 1%;
+    transition: background-color 0.3s ease-in-out;
 }
+
 .generos-list button:hover {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Estilize a área de filmes */
 .genero-filmes {
     display: flex;
     text-align: center;
     flex-wrap: wrap;
-    margin: 10px 0;
-}
-.titulo-genero{
+    margin: 0.5% 0;
+    align-items: center;
     justify-content: center;
+}
+
+.titulo-genero {
+    justify-content: center;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.filme-info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 2%;
+    background-color: #111;
+    border: 0.05% solid #333;
+    border-radius: 2.5%;
+    position: relative;
+    justify-content: center;
+    margin-left: 1.75%;
+}
+
+.filme-imagem {
+    width: 0.83%;
+}
+
+.filme-texto {
+    padding: 0.167%;
+    text-align: left;
+}
+
+.filme-texto h1 {
+    font-size: 0.75%;
+}
+
+.filme-texto p {
+    font-size: 0.5%;
+    color: #999;
+}
+
+.capa-filme {
+    max-height: 100%;
+    max-width: 100%;
+    margin-right: 0.25%;
+    margin-left: 0.25%;
+    margin-bottom: 0.25%;
+    margin-top: 0.25%;
 }

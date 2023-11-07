@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const movieContainers = document.querySelectorAll(".movie");
     const destaqueTitle = document.getElementById("destaque-title");
@@ -97,8 +98,87 @@ document.addEventListener("DOMContentLoaded", function () {
         filterMovies("filme");
     });
 });
-document.getElementById('calc-button').addEventListener('click', function() {
-    // Redirecionar o usuário para outra página
-    window.location.href = 'calculadora.html';
+document.addEventListener("DOMContentLoaded", function() {
+    var divParaMover = document.getElementById("filme1");
+    var destino = document.getElementById("destino");
+
+    if (divParaMover && destino) {
+        // Mover a div de uma página para outra
+        destino.appendChild(divParaMover);
+    }
 });
 
+
+
+
+
+const searchButto = document.getElementById('search-button');
+const searchInpu = document.getElementById('search-input');
+const resultadosContainer = document.getElementById('resultados-container');
+
+searchButto.addEventListener('click', () => {
+    const searchTerm = searchInpu.value;
+
+    fetch(`/buscar-filmes?term=${searchTerm}`)
+        .then((response) => response.json())
+        .then((resultados) => {
+            exibirResultados(resultados);
+        })
+        .catch((error) => {
+            console.error('Erro:', error);
+        });
+});
+
+function exibirResultados(resultados) {
+    resultadosContainer.innerHTML = ''; // Limpar resultados anteriores
+
+    if (resultados.length === 0) {
+        resultadosContainer.innerHTML = '<p>Nenhum filme encontrado.</p>';
+        return;
+    }
+
+    resultados.forEach((filme) => {
+        const filmeDiv = document.createElement('div');
+        filmeDiv.className = 'movie';
+        // Crie elementos de imagem, título, etc., e adicione ao filmeDiv
+        // ...
+
+        resultadosContainer.appendChild(filmeDiv);
+    });
+}
+const konamiCode = [
+    'ArrowUp',
+    'ArrowUp',
+    'ArrowDown',
+    'ArrowDown',
+    'ArrowLeft',
+    'ArrowRight',
+    'ArrowLeft',
+    'ArrowRight',
+    'b',
+    'a',
+];
+let konamiCodePosition = 0;
+
+function checkKonamiCode(event) {
+    const key = event.key;
+
+    if (key === konamiCode[konamiCodePosition]) {
+        konamiCodePosition++;
+
+        if (konamiCodePosition === konamiCode.length) {
+            openCalculator();
+            konamiCodePosition = 0;
+        }
+    } else {
+        konamiCodePosition = 0;
+    }
+}
+
+function openCalculator() {
+    window.location.href = 'calculadora.html'
+    // Neste exemplo, exibimos um alerta como mensagem.
+    alert("Código secreto detectado. Abrindo a calculadora.");
+}
+
+document.addEventListener('keydown', checkKonamiCode);

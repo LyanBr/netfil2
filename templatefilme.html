@@ -6,12 +6,12 @@
 </head>
 <body>
     <div class="div_header">
-        <a href="index.html"><img src="img/IFLIX.png" height="50px"></a>
+        <a href="index.html"><img src="img/IFLIX.png" height="50px" class="logo"></a>
         <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="#" id="filtro-series" >Séries</a></li>
-            <li><a href="#" id="filtro-filmes" >Filmes</a></li>
-            <li><a href="#">Gêneros</a></li>
+            <li><a href="index.html" id="filtro-inicio">Início</a></li>
+            <li><a href="index.html" id="filtro-series" >Séries</a></li>
+            <li><a href="index.html" id="filtro-filmes" >Filmes</a></li>
+            <li><a href="generos.html">Gêneros</a></li>
             <li><a href="favoritos.html">Favoritos</a></li>
         </ul>
         <div class="search-bar">
@@ -19,23 +19,26 @@
             <button id="search-button">Buscar</button>
         </div>
     </div>
-
     <main class="main-template">
-        <div id="content">
-            <img id="img-filme" class="filme-imagem">
+       
             <div class="filme-info">
-                <h1>Nome do Filme </h1>
-                <p>Ano: Ano do Filme</p>
-                <p>Sinopse: Descrição do Filme</p>
+                <img id="img-filme" class="capa-filme">  
+                <div class="filme-texto">
+                    <h1>Nome do Filme</h1>
+                    <p>Ano: Ano do Filme</p>
+                    <p>Sinopse: Descrição do Filme</p>
+                </div>
             </div>
 
-            <!-- Adicione o vídeo do YouTube aqui -->
-        </div>
+        
     </main>
+    
+    
 
     <footer class="rodape-estilizado">
         <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
         <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale">Fale Conosco</a></li>
+        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
     </footer>
     <script src="Script.js"></script>
     <script>
@@ -45,10 +48,10 @@
 
     const movieData = {
         filme1: {
+            imagem: "https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" ,
             nome: "A freira",
             ano: "2018",
-            Sinopse: "Fazendo parte da franquia Invocação do Mal, em A Freira, após uma irmã cometer suicídio em um convento na Romênia, o Vaticano envia um padre atormentado e uma noviça para investigar o ocorrido. Arriscando suas vidas, a fé e até suas almas, os dois descobrem um segredo profano no local, confrontando-se com uma força do mal que toma a forma de uma freira demoníaca e transforma o convento num campo de batalha espiritual.",
-            imagem: "https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg"
+            Sinopse: "Fazendo parte da franquia Invocação do Mal, em A Freira, após uma irmã cometer suicídio em um convento na Romênia, o Vaticano envia um padre atormentado e uma noviça para investigar o ocorrido. Arriscando suas vidas, a fé e até suas almas, os dois descobrem um segredo profano no local, confrontando-se com uma força do mal que toma a forma de uma freira demoníaca e transforma o convento num campo de batalha espiritual."
         },
         filme2: {
             nome: "Barbie",
@@ -61,7 +64,7 @@
             ano: "2023",
             Sinopse: "Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.",
             imagem: "https://s2-marieclaire.glbimg.com/T_DX6ffqPGvmu5rvV2neO9uK1mM=/0x0:1382x2048/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/u/n/y0xBC1SIy2idfpVSornQ/barbie-posteres.jpg"
-        },
+                },
         filme4: {
             nome: "Barbie",
             ano: "2023",
@@ -91,24 +94,20 @@
 
     if (movieData.hasOwnProperty(filmeSelecionado)) {
         const movie = movieData[filmeSelecionado];
+        const filmeImagem = document.getElementById("img-filme");
+        filmeImagem.src = movie.imagem;
+        filmeImagem.alt = movie.nome;
+        
         document.title = `Filme - ${movie.nome}`;
         document.querySelector("h1").textContent = movie.nome;
         document.querySelector("p:nth-of-type(1)").textContent = `Ano: ${movie.ano}`;
         document.querySelector("p:nth-of-type(2)").textContent = `Sinopse: ${movie.Sinopse}`;
-
-        // Crie um elemento de imagem
-        const filmeImagem = document.getElementById("img-filme");
-        filmeImagem.src = movie.imagem;
-        filmeImagem.alt = movie.nome;
-
-        // Adicione a imagem ao documento
-        const contentDiv = document.getElementById("content");
-        contentDiv.appendChild(filmeImagem);
+      
     } else {
         document.body.innerHTML = "<p>Filme não encontrado.</p>";
     }
-});
-
+    });
+    
     </script>
 </body>
 </html>
