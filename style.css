@@ -37,7 +37,7 @@ body {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 100%;
+    font-size: clamp(.875rem, 1.5rem, 3rem);
     margin-bottom: 5%;
 }
 
@@ -53,6 +53,8 @@ body {
     align-items: center;
     padding: 1% 2%;
     box-shadow: 0px 0.05% 0.025% rgba(0, 0, 0, 0.5);
+    height: auto;
+    width: 100vw;
 }
 
 h1 {
@@ -76,7 +78,7 @@ h1 {
     border: none;
     border-radius: 0.4rem;
     margin-right: 2%;
-    font-size: 70%;
+    font-size: clamp(.875rem, 1rem, 1.125rem);
     background: #333;
     color: #fff;
     transition: background 0.2s;
@@ -112,7 +114,7 @@ h1 {
     color: #fff;
     text-align: center;
     padding: 10px;
-    font-size: 100%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     position: static;
     bottom: 0;
     left: 0;
@@ -124,7 +126,7 @@ h1 {
     text-decoration: none;
     color: #9f9b9b;
     font-weight: bold;
-    font-size: 120%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     list-style: none;
 }
 .Fale_conosco :hover{
@@ -155,7 +157,7 @@ h1 {
     align-items: center;
     justify-content: center;
     margin-bottom: 1%;
-    font-size: 100%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
 }
 
 .movie img {
@@ -166,7 +168,7 @@ h1 {
 
 .movie::after {
     content: "\25B6";
-    font-size: 200%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     position: absolute;   
     top: 50%;
     left: 50%;
@@ -202,7 +204,7 @@ main {
 }
 
 .em-contato {
-    font-size: 120%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     color: #944ab1;
     text-transform: uppercase;
     text-align: center;
@@ -216,7 +218,7 @@ main {
     margin: 0.83% 1.67% 0 0;
     width: 2rem;
     text-align: right;
-    font-size: 100%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     color: #000000;
     text-transform: uppercase;
     text-shadow: 0px 0.033% 0px #7c7c7c;
@@ -228,7 +230,7 @@ main {
     background: #2d0b2c;
     border-radius: 2.5%;
     font-family: sans-serif;
-    font-size: 70%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     color: #4e244c;
     text-transform: uppercase;
     text-shadow: 0px -0.033% 0px #334f71;
@@ -244,7 +246,7 @@ main {
     background: #2d0b2c;
     border-radius: 2.5%;
     font-family: sans-serif;
-    font-size: 2%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     color: #f2f2f2;
     text-transform: uppercase;
     text-shadow: 0px -0.033% 0px #334f71;
@@ -302,7 +304,7 @@ textarea:focus {
     padding: 0.5% 1%;
     margin: 0.5%;
     cursor: pointer;
-    font-size: 100%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     transition: background-color 0.3s ease-in-out;
 }
 
@@ -348,11 +350,11 @@ textarea:focus {
 }
 
 .filme-texto h1 {
-    font-size: 0.75%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
 }
 
 .filme-texto p {
-    font-size: 0.5%;
+    font-size:  clamp(.875rem, 1rem, 1.125rem);
     color: #999;
 }
 
