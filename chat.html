@@ -40,7 +40,34 @@
     <footer class="rodape-estilizado">
         <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
         <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale"> Fale Conosco</a></li>
-        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
+        <p>Compartilhe:</p>
+        <div class="share-buttons">
+            <a onclick="shareOnFacebook()"><img class="Face" src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"></a>
+            <a onclick="shareOnTwitter()"><img class="X" src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png"></a>
+            <a onclick="shareOnWhatsApp()"><img class="ZAP" src="https://aacelpe.com.br/wp-content/uploads/2022/07/logo-whatsapp-png-transparente10.png"></a>
+        </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita o envio padrão do formulário
+        const nome = contactForm.querySelector("#nome").value;
+        const email = contactForm.querySelector("#email").value;
+        const mensagem = contactForm.querySelector("#mensagem").value;       
+        if (nome.trim() === "" || email.trim() === "" || mensagem.trim() === "") {
+
+             alert("Por favor, preencha todos os campos do formulário.");
+        
+        } else {
+                // Aqui você pode enviar os dados para o servidor ou fazer qualquer ação necessária.
+                // Por exemplo, usando a função fetch() para fazer uma solicitação de envio.
+                // Substitua esta parte pelo código de envio real.
+                alert("Formulário enviado com sucesso!");
+                contactForm.reset(); // Limpa o formulário após o envio
+            }
+    });
+});
+    </script>
 </body>
 </html>

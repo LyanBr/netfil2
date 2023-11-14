@@ -22,62 +22,144 @@
     <div id="resultados-container">
           <!-- Os resultados da pesquisa serão exibidos aqui -->
     </div>    
-    <main >
-        <div id="slideshow-example" data-component="slideshow">
-            <div role="list">
-              <div class="slide">
-                <img src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="">
-              </div>
-              <div class="slide">
-                <img src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="">
-              </div>
-              <div class="slide">
-                <img src="https://upload.wikimedia.org/wikipedia/pt/b/bd/Click_film.jpg" alt="">
-              </div>
-            </div>
-          </div>
+    <main class="main-fav" >
+      <h1>Os FAvoritos da Rapaziada</h1>
+      <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="Imagem 1"></div>
+            <div class="slide"><img src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="Imagem 2"></div>
+            <div class="slide"><img src="https://m.media-amazon.com/images/M/MV5BMTY3MjU0NDA0OF5BMl5BanBnXkFtZTgwNTc0MTU3OTE@._V1_.jpg" alt="Imagem 3"></div>
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
     </main>
 <style>
- [data-component="slideshow"] .slide {
-    display: none;
-  }
 
-  [data-component="slideshow"] .slide.active {
-    display: block;
-  }
+.slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+img {
+    width: 50%;
+    height: auto;
+
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 10%;
+    height: 90%;
+    background-color: rgb(27, 24, 24);
+    opacity: 0.5;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.dots-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgb(129, 34, 180);
+}
+
 </style>
 <script>
-var slideshows = document.querySelectorAll('[data-component="slideshow"]');
-  
-  // Aplica a todas as apresentações de slides que você define com o HTML escrito
-  slideshows.forEach(initSlideShow);
+let currentSlideIndex = 1;
+showSlides(currentSlideIndex);
 
-  function initSlideShow(slideshow) {
+function nextSlide() {
+    showSlides(currentSlideIndex += 1);
+}
 
-    var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`); // Obter um array de slides
+function prevSlide() {
+    showSlides(currentSlideIndex -= 1);
+}
 
-    var index = 0, time = 2000;
-    slides[index].classList.add('active');  
-    
-    setInterval( () => {
-      slides[index].classList.remove('active');
-      
-      //Passar por cada slide, incrementando o índice
-      index++;
-      
-      // Ao passar por todos os slides, reiniciar o índice para exibir o primeiro slide e iniciar novamente
-      if (index === slides.length) index = 0; 
-      
-      slides[index].classList.add('active');
+function currentSlide(n) {
+    showSlides(currentSlideIndex = n);
+}
 
-    }, time);
-  }
+function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("slide");
+    const dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+        currentSlideIndex = 1;
+    }
+
+    if (n < 1) {
+        currentSlideIndex = slides.length;
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[currentSlideIndex - 1].style.display = "block";
+    dots[currentSlideIndex - 1].className += " active";
+
+    // Configurar temporizador para avançar automaticamente após 5 segundos
+    setTimeout(nextSlide, 5000);
+}
+
+
+
 </script>
     <script src="Script.js"></script>
     <footer class="rodape-estilizado">
         <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
         <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale"> Fale Conosco</a></li>
-        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
+        <p>Compartilhe:</p>
+        <div class="share-buttons">
+            <a onclick="shareOnFacebook()"><img class="Face" src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"></a>
+            <a onclick="shareOnTwitter()"><img class="X" src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png"></a>
+            <a onclick="shareOnWhatsApp()"><img class="ZAP" src="https://aacelpe.com.br/wp-content/uploads/2022/07/logo-whatsapp-png-transparente10.png"></a>
+        </div>
     </footer>
 
 

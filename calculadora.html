@@ -22,6 +22,7 @@
         </div>     
     </div>
     <main>
+        <h1>Calculadora</h1>
         <div class="calculator">
             <div class="display">
                 <input type="text" id="display">
@@ -58,7 +59,12 @@
     <footer class="rodape-estilizado">
         <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
         <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale"> Fale Conosco</a></li>
-        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
+        <p>Compartilhe:</p>
+        <div class="share-buttons">
+            <a onclick="shareOnFacebook()"><img class="Face" src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"></a>
+            <a onclick="shareOnTwitter()"><img class="X" src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png"></a>
+            <a onclick="shareOnWhatsApp()"><img class="ZAP" src="https://aacelpe.com.br/wp-content/uploads/2022/07/logo-whatsapp-png-transparente10.png"></a>
+        </div>
     </footer>     
     <script src="Script.js"></script>   
     <script>
@@ -106,7 +112,12 @@
         }
     }
     </script>
-    <Style>    
+    <Style>   
+    main{
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
     .calculator {
         text-align: center;
         border: 1px solid #ccc;

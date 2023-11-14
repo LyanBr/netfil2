@@ -27,26 +27,7 @@ const menuItems = document.querySelectorAll('.div_header ul li');
                         searchButton.classList.remove('search-animation'); /* Removemos a classe após a animação */
                     }, 200);
                 });
-document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("contact-form");
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita o envio padrão do formulário
-        const nome = contactForm.querySelector("#nome").value;
-        const email = contactForm.querySelector("#email").value;
-        const mensagem = contactForm.querySelector("#mensagem").value;       
-        if (nome.trim() === "" || email.trim() === "" || mensagem.trim() === "") {
 
-             alert("Por favor, preencha todos os campos do formulário.");
-        
-        } else {
-                // Aqui você pode enviar os dados para o servidor ou fazer qualquer ação necessária.
-                // Por exemplo, usando a função fetch() para fazer uma solicitação de envio.
-                // Substitua esta parte pelo código de envio real.
-                alert("Formulário enviado com sucesso!");
-                contactForm.reset(); // Limpa o formulário após o envio
-            }
-    });
-});
 // JavaScript no arquivo "index.html"
 document.addEventListener("DOMContentLoaded", function () {
     const movieContainers = document.querySelectorAll(".movie");
@@ -182,3 +163,22 @@ function openCalculator() {
 }
 
 document.addEventListener('keydown', checkKonamiCode);
+function shareOnFacebook() {
+    // Substitua a URL pelo link que deseja compartilhar no Facebook
+    var url = "https://www.exemplo.com";
+    window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank");
+}
+
+function shareOnTwitter() {
+    // Substitua a URL, texto e hashtags conforme necessário
+    var url = "https://www.exemplo.com";
+    var text = "Confira este incrível site! Feito Pelos melhores Programers do Brasil, @luanbraune @netossim";
+    var hashtags = "webdev,SPIIFTO,teste";
+    window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text) + "&hashtags=" + encodeURIComponent(hashtags), "_blank");
+}
+function shareOnWhatsApp() {
+    // Substitua o número e a mensagem conforme necessário
+    
+    var text = "Confira este incrível site: https://www.exemplo.com";
+    window.open("https://wa.me/" + "?text=" + encodeURIComponent(text), "_blank");
+}

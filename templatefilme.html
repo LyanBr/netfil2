@@ -20,38 +20,41 @@
         </div>
     </div>
     <main class="main-template">
-       
-            <div class="filme-info">
-                <img id="img-filme" class="capa-filme">  
-                <div class="filme-texto">
-                    <h1>Nome do Filme</h1>
-                    <p>Ano: Ano do Filme</p>
-                    <p>Sinopse: Descrição do Filme</p>
-                </div>
+        <div class="filme-info">
+            <img id="img-filme" class="capa-filme">  
+            <div class="filme-texto">
+                <h1>Nome do Filme</h1>
+                <p>Ano: Ano do Filme</p>
+                <p>Sinopse: Descrição do Filme</p>
+                
             </div>
-
-        
+           
+        </div>
     </main>
-    
-    
-
     <footer class="rodape-estilizado">
         <p>&copy; 2023 JAIR-LUAN IFTO. Todos os direitos reservados.</p>
         <li class="Fale_conosco" id="Fale_conosco"><a href="chat.html" class="fale">Fale Conosco</a></li>
-        <a href="calculadora.html "> <Button id="calc-button">Calculadora Foda</Button> </a>
+        <p>Compartilhe:</p>
+        <div class="share-buttons">
+            <a onclick="shareOnFacebook()"><img class="Face" src="https://cdn.icon-icons.com/icons2/1826/PNG/512/4202107facebookfblogosocialsocialmedia-115710_115591.png"></a>
+            <a onclick="shareOnTwitter()"><img class="X" src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png"></a>
+            <a onclick="shareOnWhatsApp()"><img class="ZAP" src="https://aacelpe.com.br/wp-content/uploads/2022/07/logo-whatsapp-png-transparente10.png"></a>
+        </div>
     </footer>
     <script src="Script.js"></script>
     <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const filmeSelecionado = urlParams.get("filme");
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const filmeSelecionado = urlParams.get("filme");
 
-    const movieData = {
+        const movieData = {
         filme1: {
             imagem: "https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" ,
             nome: "A freira",
             ano: "2018",
-            Sinopse: "Fazendo parte da franquia Invocação do Mal, em A Freira, após uma irmã cometer suicídio em um convento na Romênia, o Vaticano envia um padre atormentado e uma noviça para investigar o ocorrido. Arriscando suas vidas, a fé e até suas almas, os dois descobrem um segredo profano no local, confrontando-se com uma força do mal que toma a forma de uma freira demoníaca e transforma o convento num campo de batalha espiritual."
+            Sinopse: "Fazendo parte da franquia Invocação do Mal, em A Freira, após uma irmã cometer suicídio em um convento na Romênia, o Vaticano envia um padre atormentado e uma noviça para investigar o ocorrido. Arriscando suas vidas, a fé e até suas almas, os dois descobrem um segredo profano no local, confrontando-se com uma força do mal que toma a forma de uma freira demoníaca e transforma o convento num campo de batalha espiritual.",
+            Link: "https://drive.google.com/file/d/1UuA7SWtMHir6tKoM-ga4VMAOyoXVC-MK/preview"
+
         },
         filme2: {
             nome: "Barbie",
@@ -95,19 +98,29 @@
     if (movieData.hasOwnProperty(filmeSelecionado)) {
         const movie = movieData[filmeSelecionado];
         const filmeImagem = document.getElementById("img-filme");
+        const Link = document.getElementById("link");
+        const filmeFrame = document.createElement("iframe");
+
         filmeImagem.src = movie.imagem;
         filmeImagem.alt = movie.nome;
-        
+
         document.title = `Filme - ${movie.nome}`;
         document.querySelector("h1").textContent = movie.nome;
         document.querySelector("p:nth-of-type(1)").textContent = `Ano: ${movie.ano}`;
         document.querySelector("p:nth-of-type(2)").textContent = `Sinopse: ${movie.Sinopse}`;
-      
-    } else {
-        document.body.innerHTML = "<p>Filme não encontrado.</p>";
-    }
-    });
-    
+
+        // Adiciona o link do trailer como um elemento <iframe>
+        filmeFrame.src = movie.Link;
+        filmeFrame.allow = "autoplay";
+
+        // Encontrar a div onde você deseja inserir o trailer e adicioná-lo
+        const filmeInfo = document.querySelector(".filme-texto");
+        filmeInfo.appendChild(filmeFrame);
+
+            } else {
+                document.body.innerHTML = "<p>Filme não encontrado.</p>";
+            }
+        });
     </script>
 </body>
 </html>
