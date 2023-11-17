@@ -165,13 +165,13 @@ function openCalculator() {
 document.addEventListener('keydown', checkKonamiCode);
 function shareOnFacebook() {
     // Substitua a URL pelo link que deseja compartilhar no Facebook
-    var url = "https://www.exemplo.com";
+    var url = "https://lyanbr.github.io/netfil2/index.html";
     window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank");
 }
 
 function shareOnTwitter() {
     // Substitua a URL, texto e hashtags conforme necessário
-    var url = "https://www.exemplo.com";
+    var url = "https://lyanbr.github.io/netfil2/index.html";
     var text = "Confira este incrível site! Feito Pelos melhores Programers do Brasil, @luanbraune @netossim";
     var hashtags = "webdev,SPIIFTO,teste";
     window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(url) + "&text=" + encodeURIComponent(text) + "&hashtags=" + encodeURIComponent(hashtags), "_blank");
@@ -179,6 +179,6 @@ function shareOnTwitter() {
 function shareOnWhatsApp() {
     // Substitua o número e a mensagem conforme necessário
     
-    var text = "Confira este incrível site: https://www.exemplo.com";
+    var text = "Confira este incrível site: https://lyanbr.github.io/netfil2/index.html";
     window.open("https://wa.me/" + "?text=" + encodeURIComponent(text), "_blank");
 }
