@@ -135,11 +135,11 @@
         document.querySelector("p:nth-of-type(1)").textContent = `Ano: ${movie.ano}`;
         document.querySelector("p:nth-of-type(2)").textContent = `Sinopse: ${movie.Sinopse}`;
 
-        // Adiciona o link do trailer como um elemento <iframe>
+        // Adiciona o link do filme como um elemento <iframe>
         filmeFrame.src = movie.Link;
         filmeFrame.allow = "autoplay";
 
-        // Encontrar a div onde você deseja inserir o trailer e adicioná-lo
+        // Encontrar a div onde você deseja inserir o filme e adicioná-lo
         const filmeInfo = document.querySelector(".filme-texto");
         filmeInfo.appendChild(filmeFrame);
 
