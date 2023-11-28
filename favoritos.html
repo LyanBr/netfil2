@@ -23,12 +23,12 @@
           <!-- Os resultados da pesquisa serão exibidos aqui -->
     </div>    
     <main class="main-fav" >
-      <h1>Os FAvoritos da Rapaziada</h1>
+      <h1>Os Favoritos da Rapaziada</h1>
       <div class="slider-container">
         <div class="slider">
-            <div class="slide"><img src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="Imagem 1"></div>
-            <div class="slide"><img src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="Imagem 2"></div>
-            <div class="slide"><img src="https://m.media-amazon.com/images/M/MV5BMTY3MjU0NDA0OF5BMl5BanBnXkFtZTgwNTc0MTU3OTE@._V1_.jpg" alt="Imagem 3"></div>
+            <div class="slide"><img class="img" src="https://www.ucicinemas.com.br/Content/Upload/Filmes/Posters/7909/filme_7909.jpg" alt="Imagem 1"></div>
+            <div class="slide"><img class="img" src="https://i.ebayimg.com/images/g/s9MAAOSwMKRkZVDs/s-l1200.webp" alt="Imagem 2"></div>
+            <div class="slide"><img class="img" src="https://m.media-amazon.com/images/M/MV5BMTY3MjU0NDA0OF5BMl5BanBnXkFtZTgwNTc0MTU3OTE@._V1_.jpg" alt="Imagem 3"></div>
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
@@ -40,6 +40,12 @@
     </div>
     </main>
 <style>
+h1{
+    position: relative;
+    margin-left: 35%;
+    margin-bottom: 10%;
+    margin-top: 1%;
+}
 
 .slider-container {
     position: relative;
@@ -55,7 +61,7 @@
     text-align: center;
 }
 
-img {
+.img {
     width: 50%;
     height: auto;
 
